@@ -1,0 +1,95 @@
+.main-carousel {
+  font-family: "Open Sans", sans-serif;
+  .slick-prev,
+  .slick-next {
+    cursor: pointer;
+    position: absolute;
+    text-align: center;
+    z-index: 2;
+    top: 50%;
+    margin: -25px 0 0;
+    font-size: 0;
+    line-height: 0;
+    padding: 0;
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+    border: none;
+    border-radius: 50%;
+    outline: none;
+    transition: .3s;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin: -8px 0 0 -4px;
+      display: block;
+      width: 16px;
+      height: 16px;
+      border: solid $blue;
+      border-width: 0 0 1px 1px;
+      transform: rotate(45deg);
+    }
+  }
+  .slick-prev {
+    left: 30px;
+  }
+  .slick-next {
+    right: 30px;
+    &::before {
+      transform: rotate(225deg);
+      margin: -8px 0 0 -11px;
+    }
+  }
+  &__slide {
+    height: 566px;
+    position: relative;
+  }
+  &__overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(73,203,205,0.5);
+  }
+  &__block {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    max-width: 680px;
+  }
+  &__title {
+    color: #fff;
+    font-size: 63px;
+    line-height: 66px;
+    font-weight: 600;
+    text-shadow:  1px 1px 0 #484c55;
+    margin: 0 0 45px;
+  }
+  &__text {
+    max-width: 380px;
+    font-size: 23px;
+    line-height: 30px;
+    color: #fff;
+    margin: 0 auto 50px;
+  }
+  &__link {
+    text-decoration: none;
+    font-size: 26px;
+    line-height: 30px;
+    color: #fff;
+    border: 3px solid #fff;
+    border-radius: 5px;
+    padding: 15px 35px;
+    background-color: transition;
+    transition: .3s;
+    &:hover {
+      background-color: $blue;
+      border-color: $blue;
+    }
+  }
+}
