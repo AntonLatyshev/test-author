@@ -1,0 +1,181 @@
+.contact {
+  padding: 100px 0 100px;
+  background-size: cover;
+  position: relative;
+  font-family: "Open Sans", sans-serif;
+  &__overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0,0,0,0.5);
+  }
+  &__holder {
+    max-width: 1180px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+  &__title {
+    @extend .team__title;
+    color: #fff!important;
+  }
+  &__block {
+    @extend %clearfix;
+  }
+  &__info {
+    float: left;
+    max-width: 440px;
+    width: 100%;
+  }
+  &__info-title {
+    font-size: 24px;
+    line-height: 28px;
+    margin: 0 0 10px;
+    color: #fff;
+  }
+  &__info-text {
+    font-size: 14px;
+    line-height: 18px;
+    color: #fff;
+    margin: 0 0 40px;
+  }
+  &__social-list {
+    @extend %clear-list;
+    @extend %clearfix;
+    margin: 0 0 20px;
+  }
+  &__social {
+    float: left;
+    width: 40px;
+    height: 40px;
+    box-sizing: border-box;
+    border-radius: 50%;
+    transition: .3s;
+    a {
+      display: block;
+      height: 100%;
+      position: relative;
+      &::before {
+        @extend %pseudo;
+        top: 50%;
+        left: 50%;
+      }
+    }
+    &.facebook {
+      border: 3px solid $fb;
+      background-color: $fb;
+      a::before {
+        @extend %icon-social_facebook;
+        margin: -11px 0 0 -6px;
+      }
+    }
+    &.twitter {
+      border: 3px solid $tw;
+      background-color: $tw;
+      a::before {
+        @extend %icon-social_twitter;
+        margin: -8px 0 0 -10px;
+      }
+    }
+    &.google {
+      border: 3px solid $gp;
+      background-color: $gp;
+      a::before {
+        @extend %icon-social_google;
+        margin: -10px 0 0 -8px;
+      }
+    }
+    &:hover {
+      background-color: transparent;
+    }
+  }
+  &__social + &__social {
+    margin: 0 0 0 15px;
+  }
+  &__developers {
+    font-size: 14px;
+    line-height: 18px;
+    color: $lilac;
+    margin: 0 0 10px;
+    a {
+      display: inline-block;
+      color: inherit;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  &__phone {
+    display: block;
+    color: $lilac;
+    font-size: 14px;
+    line-height: 18px;
+    text-decoration: none;
+    margin: 0 0 10px;
+    transition: .3s;
+    &:hover {
+      color: $blue;
+    }
+  }
+  &__email {
+    @extend .contact__phone;
+    margin: 0;
+  }
+  &__form {
+    float: right;
+    max-width: 570px;
+    width: 100%;
+  }
+  &__row {
+    @extend %clearfix;
+    margin: 0 0 30px;
+  }
+  &__field {
+    float: left;
+    outline: none;
+    width: 270px;
+    box-sizing: border-box;
+    height: 46px;
+    background-color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 0 20px;
+  }
+  &__field + &__field {
+    margin: 0 0 0 30px;
+  }
+  &__textarea {
+    width: 100%;
+    height: 180px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    padding: 14px 20px;
+    margin: 0 0 30px;
+  }
+  &__holder-btn {
+    text-align: right;
+  }
+  &__btn-submit {
+    cursor: pointer;
+    display: inline-block;
+    font-size: 22px;
+    line-height: 22px;
+    border: none;
+    background-color: $blue;
+    color: #fff;
+    border-radius: 5px;
+    text-align: center;
+    width: 170px;
+    height: 50px;
+    transition: .3s;
+    &:hover {
+      background-color: #fff;
+      color: $blue;
+    }
+  }
+}

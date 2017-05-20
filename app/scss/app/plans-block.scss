@@ -1,0 +1,75 @@
+.plans {
+  background-color: #f1f1f1;
+  font-family: "Open Sans", sans-serif;
+  padding: 100px 0 100px;
+  &__list {
+    text-align: center;
+    max-width: 1180px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    @extend %clearfix;
+  }
+  &__box {
+    display: flex;
+    flex-direction: column;
+    float: left;
+    width: 368px;
+  }
+  &__box + &__box {
+    margin: 0 0 0 38px;
+  }
+  &__title {
+    text-align: center;
+    background-color: $gray;
+    color: #fff;
+    font-size: 26px;
+    line-height: 75px;
+    &.hover {
+      background-color: $blue;
+    }
+  }
+  &__value {
+    font-size: 20px;
+    text-align: center;
+    background-color: $ll_gray;
+    color: $gray;
+    line-height: 70px;
+  }
+  &__list-box {
+    @extend %clear-list;
+    background-color: #fff;
+    border-top: 1px solid $exl_gray;
+    flex: 1 0 auto;
+    li {
+      text-align: center;
+      font-size: 14px;
+      line-height: 20px;
+      color: #8c9299;
+      padding: 15px 0;
+      border-bottom: 1px solid $exl_gray;
+    }
+  }
+  &__btn-holder {
+    height: 100px;
+    line-height: 100px;
+    background-color: $ll_gray;
+    text-align: center;
+  }
+  &__btn-buy {
+    display: inline-block;
+    vertical-align: middle;
+    text-decoration: none;
+    background-color: $gray;
+    color: #fff;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 17px;
+    border-radius: 5px;
+    padding: 14px 0;
+    width: 170px;
+    &.hover {
+      background-color: $blue;
+    }
+  }
+}

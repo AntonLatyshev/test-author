@@ -18,6 +18,12 @@
     border-radius: 50%;
     outline: none;
     transition: .3s;
+    &:hover {
+      background-color: $blue;
+      &::before {
+        border-color: #fff;
+      }
+    }
     &::before {
       content: "";
       position: absolute;
