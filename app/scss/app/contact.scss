@@ -1,8 +1,14 @@
 .contact {
-  padding: 100px 0 100px;
+  padding: 100px 0;
   background-size: cover;
   position: relative;
   font-family: "Open Sans", sans-serif;
+  @include response(1200) {
+    padding: 100px 15px;
+  }
+  @include response(767) {
+    padding: 30px 15px;
+  }
   &__overlay {
     position: absolute;
     top: 0;
@@ -19,16 +25,31 @@
     z-index: 2;
   }
   &__title {
-    @extend .team__title;
-    color: #fff!important;
+    font-size: 42px;
+    line-height: 46px;
+    text-align: center;
+    color: #fff;
+    font-weight: 500;
+    text-transform: capitalize;
+    margin: 0 0 100px;
+    @include response(767) {
+      margin: 0 0 30px;
+    }
   }
   &__block {
     @extend %clearfix;
+    @include response(1048) {
+      text-align: center;
+    }
   }
   &__info {
     float: left;
     max-width: 440px;
     width: 100%;
+    @include response(1048) {
+      float: none;
+      max-width: 100%;
+    }
   }
   &__info-title {
     font-size: 24px;
@@ -41,11 +62,17 @@
     line-height: 18px;
     color: #fff;
     margin: 0 0 40px;
+    @include response(767) {
+      margin: 0 0 20px;
+    }
   }
   &__social-list {
     @extend %clear-list;
     @extend %clearfix;
     margin: 0 0 20px;
+    @include response(1048) {
+      display: inline-block;
+    }
   }
   &__social {
     float: left;
@@ -129,6 +156,11 @@
     float: right;
     max-width: 570px;
     width: 100%;
+    @include response(1048) {
+      float: none;
+      max-width: 100%;
+      margin: 0 0 30px
+    }
   }
   &__row {
     @extend %clearfix;
@@ -136,17 +168,41 @@
   }
   &__field {
     float: left;
-    outline: none;
     width: 270px;
     box-sizing: border-box;
     height: 46px;
     background-color: #fff;
-    border: none;
     border-radius: 5px;
-    padding: 0 20px;
+    @include response(1048) {
+      width: 48%;
+    }
+    @include response(639) {
+      width: 100%;
+      float: none;
+      margin: 0 0 30px;
+    }
+    input {
+      width: 100%;
+      height: 100%;
+      outline: none;
+      border: none;
+      background-color: none;
+      padding: 0 20px;
+      border-radius: 5px;
+    }
+    .error {
+      color: $error;
+      font-size: 14px;
+    }
   }
   &__field + &__field {
     margin: 0 0 0 30px;
+    @include response(1048) {
+      margin: 0 0 0 4%;
+    }
+    @include response(639) {
+      margin: 0;
+    }
   }
   &__textarea {
     width: 100%;
@@ -159,6 +215,9 @@
   }
   &__holder-btn {
     text-align: right;
+    @include response(767) {
+      text-align: center;
+    }
   }
   &__btn-submit {
     cursor: pointer;

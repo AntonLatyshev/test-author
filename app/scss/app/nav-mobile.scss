@@ -1,0 +1,40 @@
+.header {
+  &__holder {
+    position: relative;
+  }
+  &__nav.mobile {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 3;
+    background-color: #fff;
+    .header__item {
+      float: none;
+      line-height: 15px;
+      &:hover {
+        background-color: inherit;
+        .header__link {
+          color: inherit;
+        }
+        &::after {
+          display: none;
+        }
+      }
+      &.active {
+        background-color: #f8f9fb;
+        &::after {
+          display: block;
+        }
+        .header__link {
+          color: $blue;
+        }
+      }
+    }
+    .header__link {
+      text-align: center;
+      padding: 10px 25px;
+    }
+  }
+}

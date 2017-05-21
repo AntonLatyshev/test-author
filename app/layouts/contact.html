@@ -3,6 +3,20 @@
   <div class="contact__holder">
     <div class="contact__title">Contact us</div>
     <div class="contact__block">
+      <form action="#" method="post" name="contact-form" class="contact__form">
+        <div class="contact__row">
+          <div class="contact__field">
+            <input type="text" name="name" placeholder="Name">
+          </div>
+          <div class="contact__field">
+            <input type="email" name="email" placeholder="Email">
+          </div>
+        </div>
+        <textarea class="contact__textarea" name="message" rows="6" placeholder="Message"></textarea>
+        <div class="contact__holder-btn">
+          <button type="submit" class="contact__btn-submit">Send</button>
+        </div>
+      </form>
       <div class="contact__info">
         <div class="contact__info-title">Get in touch with us</div>
         <div class="contact__info-text">
@@ -20,16 +34,6 @@
         <a href="tel:+XXXXXXXXXXXX" class="contact__phone">+XX-XXXX-XXXX-XX</a>
         <a href="mailto:info@mail.com" class="contact__email">info@mail.com</a>
       </div>
-      <form action="#" method="post" name="contact-form" class="contact__form">
-        <div class="contact__row">
-          <input type="text" class="contact__field" name="name" placeholder="Name">
-          <input type="email" class="contact__field" name="email" placeholder="Email">
-        </div>
-        <textarea class="contact__textarea" name="message" rows="6" placeholder="Message"></textarea>
-        <div class="contact__holder-btn">
-          <button type="submit" class="contact__btn-submit">Send</button>
-        </div>
-      </form>
     </div>
   </div>
 </div>

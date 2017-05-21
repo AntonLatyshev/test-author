@@ -1,7 +1,13 @@
 .team {
   background-color: #fff;
-  padding: 100px 0 100px;
+  padding: 100px 0;
   font-family: "Open Sans", sans-serif;
+  @include response(1200) {
+    padding: 100px 15px;
+  }
+  @include response(767) {
+    padding: 60px 15px 30px;
+  }
   &__holder {
     max-width: 1170px;
     width: 100%;
@@ -15,6 +21,9 @@
     font-weight: 500;
     text-transform: capitalize;
     margin: 0 0 100px;
+    @include response(767) {
+      margin: 0 0 30px;
+    }
   }
   &__list {
     .slick-prev,
@@ -57,12 +66,61 @@
     }
     .slick-prev {
       left: -80px;
+      @include response(1154) {
+        left: 0;
+      }
     }
     .slick-next {
       right: -80px;
+      @include response(1154) {
+        right: 0;
+      }
       &::before {
         transform: rotate(225deg);
         margin: -8px 0 0 -11px;
+      }
+    }
+    .slick-dots {
+      @extend %clear-list;
+      @extend %clearfix;
+      position: absolute;
+      left: 50%;
+      bottom: -40px;
+      transform: translateX(-50%);
+      li {
+        cursor: pointer;
+        position: relative;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        float: left;
+        button {
+          cursor: pointer;
+          border-radius: 50%;
+          display: block;
+          background-color: #b0b8b9;
+          border: none;
+          width: 100%;
+          height: 100%;
+          outline: none;
+          font-size: 0;
+          line-height: 0;
+          padding: 0;
+          transition: .3s;
+        }
+        &:hover {
+          button {
+            background: $gray;
+          }
+        }
+        &.slick-active {
+          button {
+            background: $blue;
+          }
+        }
+      }
+      li + li {
+        margin: 0 0 0 10px;
       }
     }
   }
@@ -114,6 +172,7 @@
     overflow: hidden;
     color: $gray;
     text-transform: capitalize;
+    padding: 0 15px;
     margin: 0 0 10px;
   }
   &__position {
@@ -126,6 +185,7 @@
     text-align: center;
     font-size: 14px;
     line-height: 20px;
+    padding: 0 15px;
     color: $gray;
     height: 85px;
     overflow: hidden;

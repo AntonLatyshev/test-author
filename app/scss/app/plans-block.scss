@@ -1,7 +1,13 @@
 .plans {
   background-color: #f1f1f1;
   font-family: "Open Sans", sans-serif;
-  padding: 100px 0 100px;
+  padding: 100px 0;
+  @include response(1200) {
+    padding: 100px 15px;
+  }
+  @include response(767) {
+    padding: 30px 15px;
+  }
   &__list {
     text-align: center;
     max-width: 1180px;
@@ -9,15 +15,44 @@
     margin: 0 auto;
     display: flex;
     @extend %clearfix;
+    @include response(1200) {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+
+    }
   }
   &__box {
     display: flex;
     flex-direction: column;
     float: left;
     width: 368px;
+    @include response(1200) {
+      float: none;
+    }
+    @include response(1133) {
+      margin: 0 0 10px;
+    }
   }
   &__box + &__box {
     margin: 0 0 0 38px;
+    @include response(1200) {
+      margin: 0 0 0 15px;
+    }
+    @include response(1163) {
+      margin: 0;
+    }
+    @include response(1133) {
+      margin: 0 0 10px 10px;
+    }
+    @include response(775) {
+      margin: 0 0 10px;
+    }
+  }
+  &__box:last-child {
+    @include response(1133) {
+      margin: 0;
+    }
   }
   &__title {
     text-align: center;
